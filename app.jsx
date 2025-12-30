@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Plus, Trash2, Settings, Check, Activity, ShieldCheck, Video, BarChart3, ChevronDown, ChevronUp, AlertTriangle } from 'lucide-react';
 
-// --- 1. NVR Data ---
+// --- 1. NVR 모델 데이터 정의 ---
 const NVR_MODELS = [
   { 
     model: "DR-8564 / 8564D", 
@@ -68,7 +68,7 @@ const NVR_MODELS = [
   }
 ];
 
-// --- 2. VA Features Definition ---
+// --- 2. VA 기능 정의 ---
 const VA_FEATURES = [
   { id: 'obj', label: 'Object', group: 'ENGINE_1', icon: '🎯' },
   { id: 'intrusion', label: 'Intrusion', group: 'ENGINE_1', icon: '🚧' },
@@ -88,7 +88,7 @@ const VA_FEATURES = [
   { id: 'Mask', label: 'Mask Rule', group: 'ENGINE_0', icon: '😷' },  
 ];
 
-// --- 3. Camera Type Definition ---
+// --- 3. 카메라 타입 정의 ---
 const CAMERA_TYPES = {
   'idla_pro': { 
     label: 'IDLA Pro IP-C', 
@@ -227,7 +227,7 @@ const App = () => {
 
       <div className="max-w-6xl mx-auto space-y-4">
         
-        {/* Dashboard */}
+        {/* 상단 대시보드 */}
         <div className={`
           relative px-6 py-5 rounded-2xl shadow-xl border-2 transition-all duration-500 flex flex-wrap items-center justify-between gap-4
           ${isOverloaded 
@@ -268,7 +268,7 @@ const App = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
           <div className="lg:col-span-1 space-y-4">
-            {/* NVR Settings */}
+            {/* NVR 설정 카드 */}
             <div className={`bg-white rounded-2xl p-5 border shadow-sm transition-all ${isOverloaded ? 'border-red-200 ring-4 ring-red-50' : 'border-slate-200'}`}>
               <h2 className="font-black text-[10px] text-slate-400 flex items-center gap-2 mb-4 uppercase tracking-widest">
                 <Settings className="w-3.5 h-3.5 text-indigo-500" /> NVR Settings
